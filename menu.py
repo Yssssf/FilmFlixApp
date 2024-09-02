@@ -7,9 +7,9 @@ def menuOptions():
 
     while options not in optionsList: 
         print(menuNumbers)
-
+    try:
         options = input("Enter an option from the films main manu!:")
-
+    except EOFError:
         if options not in optionsList:
             print(f"{options} is not a vali choice in the films menu!")
     return options
@@ -21,9 +21,9 @@ def menuOptions2():
 
     while options not in optionsList: 
         print(menuNumbers)
-
+    try:
         options = input("Enter an option from the FilmFlix Sub manu!:")
-
+    except EOFError:
         if options not in optionsList:
             print(f"{options} is not a vali choice in the films menu!")
     return options
@@ -58,4 +58,6 @@ while mainProgram:
                 subManu =False       
     else:
         mainProgram = False
-input("Press enter to quit the Films application")
+try:
+    input("Press enter to quit the Films application")
+except EOFError:
