@@ -1,5 +1,9 @@
 import readFilmFlix,addFilmFlix,deleteFilmFlix,updateFilmFlix,reportFilm,reportGenre,reportRating,reportYears
+from flask import Flask
 
+app = Flask(__name__)
+
+@app.route('/')
 def menuOptions():
     options = 0
     menuNumbers = "Films Menu Options\nEnter:\n1. Add a record.\n2. Delete a record.\n3. Amend a record.\n4. Print all records.\n5. Exit."
@@ -62,3 +66,5 @@ try:
     input("Press enter to quit the Films application")
 except EOFError:
     print(end="")
+if __name__ == '__main__':
+   app.run()
