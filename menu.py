@@ -61,3 +61,4 @@ while mainProgram:
 try:
     input("Press enter to quit the Films application")
 except EOFError:
+    print(end="")
